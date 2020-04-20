@@ -1,12 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>*</members>
+        <members>GAC_Rollup_BATCH</members>
         <name>ApexClass</name>
     </types>
     <types>
-        <members>*</members>
-        <name>LightningComponentBundle</name>
+        <members>Gift_Aid_Declaration__c</members>
+        <members>Gift_Aid_Claim__c</members>
+        <members>Gift_Aid_Configuration__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Gift_Aid_Declaration__c-Gift Aid Declaration Layout</members>
+        <members>Gift_Aid_Claim__c-Gift Aid Claim Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>GAD_Source</members>
+        <name>GlobalValueSet</name>
+    </types>
+    <types>
+        <members>Contact.GiftAID_Active__c</members>
+        <members>Opportunity.Gift_Aid_Claim__c</members>
+        <members>Opportunity.Gift_Aid_Contact__c</members>
+        <members>Opportunity.Giftable_Record__c</members>
+        <members>Opportunity.Gift_Aid_Source__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Gift_Aid_Claim_Processes</members>
+        <name>Flow</name>
+    </types>
+    <types>
+        <members>Gift_Aid_Declaration__c</members>
+        <members>Gift_Aid_Claim__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>GiftAid_Management</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>Gift_Aid_Claim_Record_Page</members>
+        <members>GiftAid_Management_UtilityBar</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
+        <members>Gift_Aid_Claim</members>
+        <name>PathAssistant</name>
     </types>
     <version>48.0</version>
 </Package>

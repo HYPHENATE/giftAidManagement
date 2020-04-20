@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Oldest_claim_date__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Active__c,DATE(YEAR(Active_date__c )- $Setup.Gift_Aid_Configuration__c.Claim_back_year__c ,MONTH(Active_date__c )+1,DAY(Active_date__c )),null)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Oldest claim date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gift_Aid_Source__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Use this to confirm the source of the gift aid submission</inlineHelpText>
+    <label>Gift Aid Source</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>GAD_Source</valueSetName>
+    </valueSet>
+</CustomField>
