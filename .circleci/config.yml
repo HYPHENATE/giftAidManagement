@@ -15,22 +15,22 @@ jobs:
             name: Push Source
             command: |
                 sfdx force:source:push -u scratch
-      - run:
-            name: Run Apex Tests
-            command: |
-                mkdir ~/tests
-                mkdir ~/tests/apex
-                sfdx force:apex:test:run -u scratch -c -r human -d ~/tests/apex -w 9999
-      - run: 
-            name: Push to Codecov.io
-            command: |
-                cp ~/tests/apex/test-result-codecoverage.json .
-                bash <(curl -s https://codecov.io/bash)
+      #- run:
+      #      name: Run Apex Tests
+      #      command: |
+      #          mkdir ~/tests
+      #          mkdir ~/tests/apex
+      #          sfdx force:apex:test:run -u scratch -c -r human -d ~/tests/apex -w 9999
+      #- run: 
+      #      name: Push to Codecov.io
+      #      command: |
+      #          cp ~/tests/apex/test-result-codecoverage.json .
+      #          bash <(curl -s https://codecov.io/bash)
       - run: 
             name: Clean Up
             command: |
                 sfdx force:org:delete -u scratch -p
-                rm ~/tests/apex/*.txt ~/tests/apex/test-result-7*.json
+      #          rm ~/tests/apex/*.txt ~/tests/apex/test-result-7*.json
 orbs:
   sfdx: circleci/salesforce-sfdx@1.0.0
 version: 2.1
