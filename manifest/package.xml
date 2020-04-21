@@ -2,6 +2,9 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>GAC_Rollup_BATCH</members>
+        <members>GAC_Rollup_BATCH_Test</members>
+        <members>GAC_Rollup_BATCH_Helper</members>
+        <members>GA_DataFactory</members>
         <name>ApexClass</name>
     </types>
     <types>

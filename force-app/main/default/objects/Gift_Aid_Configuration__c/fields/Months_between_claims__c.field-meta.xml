@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Months_between_claims__c</fullName>
+    <defaultValue>1</defaultValue>
+    <externalId>false</externalId>
+    <inlineHelpText>Use this to define how frequently a Gift Aid Claim should be created. This will automatically set the end date for a claim and create a new one when that time is up.</inlineHelpText>
+    <label>Months between claims</label>
+    <precision>18</precision>
+    <required>true</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>
