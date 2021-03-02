@@ -9,11 +9,14 @@ public class GAC_Rollup_BATCH implements Database.Batchable<sObject>, Database.S
     // set out custom settings to be public
     public Gift_Aid_Configuration__c gacCS = Gift_Aid_Configuration__c.getOrgDefaults();
     
-    // set a global decimal for amount
+    // set a global decimal for value of donations
     public decimal processedAmount;
 
     // set a global integer for number of records
     public integer processedRecordCount;
+
+    // set a value for how much gift aid equals on this process
+    public decimal giftAidAmount;
 
     /**
      * @description     The querylocation within the batch class to find claims that need have their rollups run
@@ -21,7 +24,7 @@ public class GAC_Rollup_BATCH implements Database.Batchable<sObject>, Database.S
      */
     public Database.QueryLocator start(Database.BatchableContext context){
         string allowedStatus = 'New';
-        String query = 'SELECT Id,Claim_Amount__c,Claim_start_date__c, Claim_end_date__c FROM Gift_Aid_Claim__c WHERE Status__c=:allowedStatus ';
+        String query = 'SELECT Id,Claim_Amount__c,Claim_start_date__c, Gift_Aid_Percent__c, Claim_end_date__c FROM Gift_Aid_Claim__c WHERE Status__c=:allowedStatus ';
         return Database.getQueryLocator(query);
     }
 
@@ -44,7 +47,10 @@ public class GAC_Rollup_BATCH implements Database.Batchable<sObject>, Database.S
             List<Decimal> aggregatedAmounts = GAC_Rollup_BATCH_Helper.getAggregatedAmount(gac.Id);
             
             // set claim amount
-            gac.Claim_Amount__c = aggregatedAmounts[0];
+            gac.Donations_Total_Value__c = aggregatedAmounts[0];
+            system.debug('gac.Gift_Aid_Percent__c > ' + gac.Gift_Aid_Percent__c);
+            decimal claimpercent = gac.Gift_Aid_Percent__c / 100;
+            gac.Claim_Amount__c = aggregatedAmounts[0] * claimpercent;
 
             // calculate the claim end date
             date claimEndDate = gac.Claim_Start_Date__c.addMonths(numberOfMonths).addDays(-1);
@@ -63,9 +69,13 @@ public class GAC_Rollup_BATCH implements Database.Batchable<sObject>, Database.S
             // set public values
             processedAmount = aggregatedAmounts[0];
             processedRecordCount = integer.valueof(aggregatedAmounts[1]);
+            giftAidAmount = aggregatedAmounts[0] * claimpercent;
+
 
         }
-        update gaClaims;
+
+        database.update(gaClaims);
+
     }
 
     /**
@@ -81,7 +91,7 @@ public class GAC_Rollup_BATCH implements Database.Batchable<sObject>, Database.S
             String[] toAddresses = new String[] {a.CreatedBy.Email};
             mail.setToAddresses(toAddresses);
             mail.setSubject('Gift Aid Claim Processing Completed ' + a.Status);
-            mail.setPlainTextBody('This claim has a total of ' + processedRecordCount + ' income records related to it with a value of £' + processedAmount + '.');
+            mail.setPlainTextBody('This claim has a total of ' + processedRecordCount + ' income records related to it with a total donation value of £' + processedAmount + '. The Gift Aid claim value is £' + giftAidAmount + '.');
             Messaging.sendEmail(new Messaging.SingleEmailMessage[] { mail });
         }
     }

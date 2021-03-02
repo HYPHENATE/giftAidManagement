@@ -1,0 +1,89 @@
+<template>
+    <template if:true={loading}>
+        <lightning-card>
+            <div class="slds-align_absolute-center" style="height:5rem">
+                <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner> 
+            </div>
+        </lightning-card>
+    </template>
+    <template if:false={loading}>
+        <template if:true={displayGAD}>
+            <lightning-card>
+                <div slot="actions">
+                    
+                </div>
+                <div class="slds-p-horizontal_small">
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-size_1-of-3">
+                            <img src={giftaidURL}>
+                        </div>
+                        <div class="slds-col slds-size_2-of-3">
+                            <lightning-layout>
+                                <lightning-layout-item padding="around-small">
+                                    <div class="header-column">
+                                        <p class="field-title" title="Source"><strong>Source</strong></p>
+                                        <lightning-formatted-text value={giftAidDeclaration.Source__c}></lightning-formatted-text>
+                                    </div>
+                                </lightning-layout-item>
+                                <lightning-layout-item padding="around-small">
+                                    <div class="header-column">
+                                        <p class="field-title" title="Activated date"><strong>Activated date</strong></p>
+                                        <lightning-formatted-date-time value={giftAidDeclaration.Active_date__c}></lightning-formatted-date-time>
+                                    </div>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                            <lightning-layout>
+                                <lightning-layout-item padding="around-small">
+                                    <lightning-button variant="destructive" label="Deactivate" title="Deactivate" onclick={handleDeactivateClick} class="slds-m-left_x-small"></lightning-button>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </div>
+                    </div>
+                </div>
+            </lightning-card>
+        </template>
+        <template if:false={displayGAD}>
+            <lightning-card>
+                <div class="slds-p-horizontal_small">
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-size_2-of-6">
+                            <img src={giftaidURL}>
+                        </div>
+                        <template if:true={createNew}>
+                            <div class="slds-col slds-size_4-of-6">
+                                <lightning-record-edit-form object-api-name="Gift_Aid_Declaration__c" onsuccess={handleSaveClick}>
+                                    <lightning-messages></lightning-messages>
+                                    <lightning-input-field field-name="Contact__c" value={recordId}></lightning-input-field>
+                                    <lightning-input-field field-name="Source__c"></lightning-input-field>
+                                    <lightning-input-field field-name="Active_date__c"></lightning-input-field>
+                                    <lightning-input-field field-name="Find_Previous_Donations__c"></lightning-input-field>
+                                    <lightning-layout>
+                                        <lightning-layout-item padding="around-small">
+                                            <lightning-button class="slds-m-top_small" variant="brand" type="submit" name="update" label="Save"></lightning-button>
+                                        </lightning-layout-item>
+                                    </lightning-layout>
+                                </lightning-record-edit-form>  
+                            </div>
+                        </template>
+                        <template if:false={createNew}>
+                            <div class="slds-col slds-size_3-of-6">
+                                <lightning-layout>
+                                    <lightning-layout-item padding="around-small">
+                                        <p>{label.addNewText}</p>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                                <lightning-layout>
+                                    <lightning-layout-item padding="around-small">
+                                        <lightning-button variant="brand" label="Add" title="Add" onclick={handleAddClick} class="slds-m-left_x-small"></lightning-button>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                            </div>
+                            <div class="slds-col slds-size_1-of-6">
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </lightning-card>
+        </template>
+    </template>
+</template>
