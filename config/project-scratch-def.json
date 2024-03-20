@@ -1,6 +1,52 @@
 {
-  "orgName": "giftAidManagement company",
+  "orgName": "giftAid Management Company",
   "edition": "Enterprise",
-  "features": [],
-  "settings": {}
+  "features": ["EnableSetPasswordInApi",
+                "AccountingSubledgerGrowthEdition",
+                "AccountingSubledgerUser",
+                "Fundraising",
+                "OmniStudioDesigner",
+                "OmniStudioRuntime",
+                "DocGenDesigner",
+                "DocGen",
+                "IndustriesActionPlan",
+                "AnalyticsQueryService",
+                "PublicSectorAccess",
+                "Fundraising",
+                "IndustriesSalesExcellenceAddOn",
+                "IndustriesServiceExcellenceAddOn",
+                "MarketingUser",
+                "ProgramManagement",
+                "PersonAccounts",
+                "OutcomeManagement",
+                "ProgramManagement",
+                "BudgetManagement",
+                "BusinessRulesEngine"],
+  "settings": {
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": true
+    },
+    "mobileSettings": {
+      "enableS1EncryptedStoragePref2": false
+    },
+    "pathAssistantSettings": {
+      "pathAssistantEnabled": true
+    },
+    "IndustriesSettings": {
+      "enableOutcomes": true,
+      "enableBenefitManagementPreference": true,
+      "enableBenefitAndGoalSharingPref": true,
+      "enableCarePlansPreference": true,
+      "enableFundraising": true
+    },
+    "chatterSettings": {
+      "enableChatter": true
+    },
+    "apexSettings": {
+        "enableDisableParallelApexTesting": true
+    },
+    "enhancedNotesSettings": {
+        "enableEnhancedNotes": true
+    }
+  }
 }
