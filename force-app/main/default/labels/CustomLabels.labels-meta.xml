@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>GiftAidAddNewText</fullName>
+        <categories>GiftAid</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GiftAidAddNewText</shortDescription>
+        <value>Add new Declaration</value>
+    </labels>
+    <labels>
+        <fullName>GiftAidClaimNewStatus</fullName>
+        <categories>GiftAid</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GiftAidClaimNewStatus</shortDescription>
+        <value>New</value>
+    </labels>
+</CustomLabels>

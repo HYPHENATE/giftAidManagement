@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Donation_Gift_Aid_Status_Field__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Populate this field with the formula field you created for confirm what the status of linked gift aid claim is</inlineHelpText>
+    <label>Donation Gift Aid Status Field</label>
+    <metadataRelationshipControllingField>GiftAid_Settings__mdt.Donation_Object__c</metadataRelationshipControllingField>
+    <referenceTo>FieldDefinition</referenceTo>
+    <relationshipLabel>GiftAid_Settings_Gift_Aid_Status</relationshipLabel>
+    <relationshipName>GiftAid_Settings_Gift_Aid_Status</relationshipName>
+    <required>true</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>

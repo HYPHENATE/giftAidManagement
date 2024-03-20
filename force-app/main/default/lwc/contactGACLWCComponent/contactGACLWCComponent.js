@@ -1,8 +1,14 @@
+/**
+ * @description       : Sample Description
+ * @author            : daniel@hyphen8.com
+ * @last modified on  : 20/03/2024
+ * @last modified by  : daniel@hyphen8.com
+**/
 import { LightningElement, api, track } from 'lwc';
 
 import getGiftAidDeclaration from '@salesforce/apex/GAC_Helper.getGiftAidDeclaration';
 import deactiveActiveGAD from '@salesforce/apex/GAC_Helper.deactiveActiveGAD';
-import GIFTAID_LOGO from '@salesforce/resourceUrl/GiftAidLogo';
+// import GIFTAID_LOGO from '@salesforce/resourceUrl/GiftAidLogo';
 import addNewText from '@salesforce/label/c.GiftAidAddNewText';
 
 export default class ContactGACLWCComponent extends LightningElement {
@@ -14,9 +20,9 @@ export default class ContactGACLWCComponent extends LightningElement {
     @track createNew = false;
     giftaidURL = GIFTAID_LOGO;
 
-    label = {
-        addNewText
-    };
+    // label = {
+    //     addNewText
+    // };
 
     // intial call back get out data
     connectedCallback() {

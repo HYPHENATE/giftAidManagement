@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Donation_GiftAidable_Field__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Please provide the field that is used as a means of confirm that the record being process is valid to have gift aid claimed against it.</inlineHelpText>
+    <label>Donation GiftAidable Field</label>
+    <metadataRelationshipControllingField>GiftAid_Settings__mdt.Donation_Object__c</metadataRelationshipControllingField>
+    <referenceTo>FieldDefinition</referenceTo>
+    <relationshipLabel>GiftAid_Settings_Donation_Giftaidable</relationshipLabel>
+    <relationshipName>GiftAid_Settings_Donation_Giftaidable</relationshipName>
+    <required>true</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>

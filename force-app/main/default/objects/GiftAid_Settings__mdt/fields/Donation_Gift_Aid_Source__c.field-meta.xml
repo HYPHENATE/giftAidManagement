@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Donation_Gift_Aid_Source__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Provide the field that you have configured for storing the source of the donation against on the Donation record</inlineHelpText>
+    <label>Donation Gift Aid Source</label>
+    <metadataRelationshipControllingField>GiftAid_Settings__mdt.Donation_Object__c</metadataRelationshipControllingField>
+    <referenceTo>FieldDefinition</referenceTo>
+    <relationshipLabel>GiftAid_Settings_Donation_Source</relationshipLabel>
+    <relationshipName>GiftAid_Settings_Donation_Source</relationshipName>
+    <required>true</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>

@@ -21,7 +21,9 @@ public with sharing class GAC_Invocable {
         if(gacsToProcess.size() == 1){
 
             // list of opps suitable for adding to the gift aid claim
-            List<Opportunity> listOfOpportunity = [SELECT ID FROM Opportunity WHERE IsWon=:True AND Gift_Aid_Claim__c=:null AND Gift_Aid_Declaration__c!=null];
+            //List<Opportunity> listOfOpportunity = [SELECT ID FROM Opportunity WHERE IsWon=:True AND Gift_Aid_Claim__c=:null AND Gift_Aid_Declaration__c!=null];
+
+            List<Opportunity> listOfOpportunity = new List<Opportunity>();
 
             // loop through GAC claims being processed should only ever been one in this process
             for(Gift_Aid_Claim__c gac:gacsToProcess){

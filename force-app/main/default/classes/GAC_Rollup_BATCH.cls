@@ -47,8 +47,7 @@ public class GAC_Rollup_BATCH implements Database.Batchable<sObject>, Database.S
             List<Decimal> aggregatedAmounts = GAC_Rollup_BATCH_Helper.getAggregatedAmount(gac.Id);
             
             // set claim amount
-            gac.Donations_Total_Value__c = aggregatedAmounts[0];
-            system.debug('gac.Gift_Aid_Percent__c > ' + gac.Gift_Aid_Percent__c);
+            // gac.Donations_Total_Value__c = aggregatedAmounts[0];
             decimal claimpercent = gac.Gift_Aid_Percent__c / 100;
             gac.Claim_Amount__c = aggregatedAmounts[0] * claimpercent;
 

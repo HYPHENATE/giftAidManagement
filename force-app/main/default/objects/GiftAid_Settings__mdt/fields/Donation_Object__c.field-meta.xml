@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Donation_Object__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Please provide the object that you are using for storing your Donations in.</inlineHelpText>
+    <label>Donation Object</label>
+    <referenceTo>EntityDefinition</referenceTo>
+    <relationshipLabel>GiftAid_Settings_Donation</relationshipLabel>
+    <relationshipName>GiftAid_Settings_Donation</relationshipName>
+    <required>true</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>

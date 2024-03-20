@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Tax_Active_Field__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Provide the field that is used as a flag for confirming that the contact is an active tax payer</inlineHelpText>
+    <label>Contact Tax Active Field</label>
+    <metadataRelationshipControllingField>GiftAid_Settings__mdt.Contact_Object__c</metadataRelationshipControllingField>
+    <referenceTo>FieldDefinition</referenceTo>
+    <relationshipLabel>GiftAid_Settings_Contact_Tax_Payer</relationshipLabel>
+    <relationshipName>GiftAid_Settings_Contact_Tax_Payer</relationshipName>
+    <required>true</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>

@@ -23,10 +23,10 @@ trigger TrgGiftAidDeclaration on Gift_Aid_Declaration__c (after insert, after up
 
             // loop through the gift Aid declarations if required and add to Sets and Maps above
             for(Gift_Aid_Declaration__c gad:trigger.new){
-                if(gad.Find_Previous_Donations__c == true){
+                // if(gad.Find_Previous_Donations__c == true){
                     setOfContactIDs.add(gad.Contact__c);
                     mapOfContactToGADs.put(gad.Contact__c, gad.Id);
-                }
+                // }
             }
 
             // process the historic records

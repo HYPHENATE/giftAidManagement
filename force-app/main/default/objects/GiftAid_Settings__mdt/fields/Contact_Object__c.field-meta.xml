@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Object__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Please provide which object you are storing the Contact details in, this could be Account or Contact or a custom Object</inlineHelpText>
+    <label>Contact Object</label>
+    <referenceTo>EntityDefinition</referenceTo>
+    <relationshipLabel>GiftAid_Settings_Contact</relationshipLabel>
+    <relationshipName>GiftAid_Settings_Contact</relationshipName>
+    <required>true</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>
